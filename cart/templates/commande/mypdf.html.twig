@@ -1,0 +1,40 @@
+{# ./templates/default/mypdf.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the PDF</title>
+</head>
+<body>
+<h4>{{ title }}</h4>
+<table class="table">
+    <thead>
+    <tr>
+        <th>id commande</th>
+        <th>produit</th>
+        <th>Quantité</th>
+        <th>Prix</th>
+    </tr>
+    </thead>
+
+
+    <tbody class="w-100">
+    {% for ligne in lignesCommandes %}
+        <tr class="w-100">
+            <td>{{ ligne.commande.id }}</td>
+            <td class="text-end">{{ ligne.Produit.title }}</td>
+            <td class="text-end">{{ ligne.quantite }}</td>
+            <td class="text-end">{{ ligne.prixProduit }}</td>
+
+        </tr>
+
+    {% else %}
+        <tr>
+            <td colspan="5" class="text-center"> pas de commandes</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+</body>
+</html>
