@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}validation{% endblock %}
+
+{% block body %}
+    {% block content %}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    {% endblock %}
+{% endblock %}
+
